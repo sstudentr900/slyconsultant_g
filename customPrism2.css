@@ -1,0 +1,508 @@
+/*使用在網頁下info.html******************************************************************************************************************/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/*root-------------------------------------- ---------------*/
+:root {
+  --white: #fff;
+  --white2: rgb(226 232 240);
+  --white3: rgb(148 163 184);
+  --white5: rgb(203 213 225/.1);
+  --white4: rgb(15 23 42/.1);
+  --white6: rgb(34 46 72);
+  --black: rgb(15, 23, 42);
+  --black2: rgb(30, 41, 59);
+  --blue: rgb(32 171 253);
+  --blue2: rgb(56 189 248);
+  --grey: #4d5d74;
+  --grey2: rgba(51, 65, 85, .2);
+  --grey3: rgb(148 163 184);
+  --grey4: rgb(100 116 139);
+  --title: var(--black);
+  --text: var(--grey);
+  --text2: var(--white3);
+  --icon: var(--white3);
+  --solid: var(--white4);
+  --scrollbar-track: #efefef;
+  --scrollbar-thumb: #cfcfcf;
+  --button-bg: var(--black2);
+  --button-text: var(--white);
+  --button2-bg: var(--white);
+  --button2-text: var(--black2);
+  --button2-solid: var(--black2);
+  --button2-bg-hover: var(--black2);
+  --button2-text-hover: var(--white);
+  --button2-solid-hover: var(--black2);
+}
+
+:root body.dark {
+  --title: var(--white2);
+  --text: var(--white3);
+  --text2: var(--white3);
+  --icon: var(--white3);
+  --solid: var(--white5);
+  --scrollbar-track: #192236;
+  --scrollbar-thumb: #2177cf;
+  --button-bg: var(--white);
+  --button-text: var(--black2);
+  --button2-bg: var(--white6);
+  --button2-text: var(--white);
+  --button2-solid: var(--white5);
+  --button2-bg-hover: var(--white);
+  --button2-text-hover: var(--black2);
+  --button2-solid-hover: var(--black2);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  /* background: url('https://tailwindcss.com/_next/static/media/docs@tinypng.61f4d3334a6d245fc2297517c87ae044.png'); */
+  background-attachment: fixed;
+  background-position: top center;
+}
+
+body.dark {
+  background: var(--black);
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+h4 {
+  line-height: 2;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*******************************************************************************************************************/
+/*! Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
+.prettyprint {
+  font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+  border: 0 !important;
+  background: #1e293b;
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 10%);
+  overflow: auto;
+  border-radius: 0.3em;
+  line-height: 1.4;
+  font-size: 16px;
+}
+
+.prettyprint xmp {
+  margin: -20px 0 -40px 0;
+}
+
+.prettyprint xmp span {
+  line-height: 1.4;
+}
+
+.prettyprint .pln {
+  color: #e6e9ed;
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+.prettyprint ol.linenums {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #656d78;
+}
+
+.prettyprint li.L0,
+.prettyprint li.L1,
+.prettyprint li.L2,
+.prettyprint li.L3,
+.prettyprint li.L4,
+.prettyprint li.L5,
+.prettyprint li.L6,
+.prettyprint li.L7,
+.prettyprint li.L8,
+.prettyprint li.L9 {
+  padding-left: 1em;
+  background-color: #2f3640;
+  list-style-type: decimal;
+}
+
+@media screen {
+
+  /* string content */
+
+  .prettyprint .str {
+    color: #ffce54;
+  }
+
+  /* keyword */
+
+  .prettyprint .kwd {
+    color: #4fc1e9;
+  }
+
+  /* comment */
+
+  .prettyprint .com {
+    color: #656d78;
+  }
+
+  /* type name */
+
+  .prettyprint .typ {
+    color: #4fc1e9;
+  }
+
+  /* literal value */
+
+  .prettyprint .lit {
+    color: #ac92ec;
+  }
+
+  /* punctuation */
+
+  .prettyprint .pun {
+    color: #e6e9ed;
+  }
+
+  /* lisp open bracket */
+
+  .prettyprint .opn {
+    color: #e6e9ed;
+  }
+
+  /* lisp close bracket */
+
+  .prettyprint .clo {
+    color: #e6e9ed;
+  }
+
+  /* markup tag name */
+
+  .prettyprint .tag {
+    color: #ed5565;
+  }
+
+  /* markup attribute name */
+
+  .prettyprint .atn {
+    color: #a0d468;
+  }
+
+  /* markup attribute value */
+
+  .prettyprint .atv {
+    color: #ffce54;
+  }
+
+  /* declaration */
+  .prettyprint .dec {
+    color: #ac92ec;
+  }
+
+  /* variable name */
+  .prettyprint .var {
+    color: #e6e9ed;
+  }
+
+  /* function name */
+  .prettyprint .fun {
+    color: #e6e9ed;
+  }
+}
+
+
+
+/* program */
+#program {
+  max-width: 920px;
+  margin: auto;
+}
+
+#program h1,
+#program h2,
+#program h3,
+#program h4 {
+  font-weight: bold;
+  font-size: 28px;
+  color: var(--title);
+
+}
+
+#program h2:nth-child(1) {
+  margin-top: 0;
+}
+
+#program h2 {
+  margin: 62px 0 28px;
+  border-left: 4px solid var(--blue);
+  padding-left: 15px;
+}
+
+#program h3 {
+  font-size: 22px;
+  margin: 62px 0 22px;
+}
+
+#program h2,
+#program h3 {
+  display: flex;
+  align-items: center;
+}
+
+#program h2 a,
+#program h3 a {
+  color: var(--blue);
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+#program h4 {
+  font-size: 18px;
+  margin: 32px 0 0;
+}
+
+#program p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text);
+  margin: 16px 0;
+  letter-spacing: 1px;
+}
+
+#program a {
+  line-height: 1.7;
+}
+
+#program pre {
+  margin-bottom: 64px;
+}
+
+#program pre[class*=language-] {
+  background: #1e293b;
+  display: flex;
+
+}
+
+:root body.dark #program pre[class*=language-] {
+  background: #1e293b;
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 10%);
+}
+
+#program hr {
+  border-color: var(--solid);
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  margin: 30px 0 40px;
+}
+
+/* #program>img {
+  width: 100%;
+  height: auto;
+} */
+
+#program ol {
+  margin: 24px 0;
+}
+
+#program ol li {
+  color: var(--text);
+  line-height: 1.5;
+}
+
+#program h2 span,
+#program p span,
+#program ol li span {
+  color: var(--blue);
+  padding: 0 5px;
+}
+
+#program ul {
+  margin-bottom: 120px;
+}
+
+#program ul li {
+  line-height: 1.5;
+}
+
+#program ul a {
+  color: var(--blue);
+}
+#program .codeDemo {
+  overflow: auto;
+  resize: horizontal;
+  padding: 1.5rem;
+  background: #1e293b;
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 10%);
+}
+#program .flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /*X,Y間距*/
+}
+#program .flex-center{
+  place-content: center;/*center center*/
+}
+#program .col_3{
+  flex: 0 1 calc((100% - calc( 10px * 3) )/3); /*width 120=>30*4*/
+}
+#program .col_3 p{
+  text-align: center;
+  margin: 0;
+}
+#program img{
+  width: 100%;
+  height: auto;
+}
+
+/*單獨頁*/
+body#program{
+  padding: 60px 20px;
+}
+
+body#program ul a {
+  text-decoration: none;
+  color: rgb(32 171 253);
+}
+
+body#program ul {
+  list-style: none;
+  padding: 0;
+}

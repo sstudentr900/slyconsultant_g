@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../home2/css/customPrism2.css">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  </head>
+  <body class="dark">
+    <div id="program">
+      <h2>使用工具</h2>
+      <p>html、css、js、laravel、mysql、vscode</p>
+      <h2>製作內容</h2>
+      <p>前後端程式撰寫、信箱、藍新金流、驗證碼、後台登入、商品和文章上下架</p>
+      <h3>前端購物車存取</h3>
+      <p>localStorage</p>
+      <pre class="prettyprint">
+        <xmp>
+          localStorage.setItem('myName',str);//存值
+          localStorage.getItem('myName');//取值
+        </xmp>
+      </pre>
+      <h3>信箱</h3>
+      <p>
+        laravel9不須安裝 composer require guzzlehttp/guzzle
+        </br>
+        gmail smtp 寄送
+      </p>
+      <h3>驗證碼</h3>
+      <p>composer require mews/captcha</p>
+      <h3>藍新</h3>
+      <p>
+        Active 正測試網址
+        </br>
+        NotifyURL 背景支付網址
+        </br>
+        ReturnURL 支付回傳網址
+      </p>
+      <h3>購物車資料表</h3>
+      <p>商品表</p>
+      <pre class="prettyprint">
+        <xmp>
+          CREATE TABLE product (
+            Id INT,
+            sort INT,
+            title varchar(100),
+            cover varchar(100),
+            ...
+          );
+        </xmp>
+      </pre>
+      <p>會員表</p>
+      <pre class="prettyprint">
+        <xmp>
+          CREATE TABLE member (
+            Id INT,
+            name varchar(50),
+            photo varchar(15),
+            city varchar(20),
+            ...
+          );
+        </xmp>
+      </pre>
+      <p>購買數量表</p>
+      <pre class="prettyprint">
+        <xmp>
+          CREATE TABLE record (
+            Id INT,
+            product_Id INT,
+            number varchar(255),
+            ...
+          );
+        </xmp>
+      </pre>
+      <p>訂單資料表</p>
+      <pre class="prettyprint">
+        <xmp>
+          CREATE TABLE order (
+            Id INT,
+            record_Id INT,
+            member_Id INT,
+            ...
+          );
+        </xmp>
+      </pre>
+      <hr>
+      <h2>搬移專案注意</h2>
+      <h3>藍新</h3>
+      <p>
+        不驗證Csrf 讓外部可以連進來
+        </br>
+        app/Http/Middleware/VerifyCsrfToken
+      </p>
+      <pre class="prettyprint">
+        <xmp>
+          protected $except = [
+            'payment_notify', //payment_notify(Route name) 背景支付網址
+            'payment_return', //payment_return(Route name) 支付回傳網址
+          ];
+        </xmp>
+      </pre>
+      <p>
+        新增config存key
+        <br>
+        config/newebpay
+      </p>
+      <pre class="prettyprint">
+        <xmp>
+          return [
+            'MerchantId' =>'',
+            'Key' =>'',
+            'IV' =>'',
+            'Active' =>'https://ccore.newebpay.com/MPG/mpg_gateway',//測試網址
+            'Active' =>'https://core.newebpay.com/MPG/mpg_gateway',//正試網址
+            'NotifyURL' =>'.../payment_notify',//背景支付網址
+            'ReturnURL' =>'.../payment_return',//支付回傳網址
+          ];
+        </xmp>
+      </pre>
+      <h3>config 語系修改</h3>
+      <p>config/app</p>
+      <pre class="prettyprint">
+        <xmp>
+          'timezone' => 'Asia/Taipei',
+          'locale' => 'zh-tw',
+        </xmp>
+      </pre>
+      <h3>.env 修改</h3>
+      <pre class="prettyprint">
+        <xmp>
+          //資料庫
+          DB_CONNECTION=mysql
+          DB_HOST=127.0.0.1
+          DB_PORT=3306
+          DB_DATABASE=
+          DB_USERNAME=
+          DB_PASSWORD=
+          //信箱
+          MAIL_MAILER=smtp
+          MAIL_HOST=smtp.gmail.com
+          MAIL_PORT=1025
+          MAIL_USERNAME=
+          MAIL_PASSWORD=
+          MAIL_ENCRYPTION=tls
+          MAIL_FROM_ADDRESS=
+          MAIL_FROM_NAME="${APP_NAME}"
+        </xmp>
+      </pre>
+      <h3>複製資料</h3>
+      <p>
+        app/http/controllers
+        <br>
+        app/http/middleware 資料庫
+        <br>
+        public/css
+        <br>
+        public/images
+        <br>
+        public/js
+        <br>
+        resources/lang/en 語系
+        <br>
+        resources/lang/zh-tw 語系
+      </p>
+      <h3>路由驗證</h3>
+      <p>app/http/kernel</p>
+      <pre class="prettyprint">
+        <xmp>
+          protected $routeMiddleware = [
+            'auth.baadmin' => \App\Http\Middleware\BaAdminMiddleware::class,
+            'auth.fnadmin' => \App\Http\Middleware\FnAdminMiddleware::class,
+          ];
+        </xmp>
+      </pre>
+      <h3>captcha 驗證碼</h3>
+      <p>config/app 引用captcha</p>
+      <pre class="prettyprint">
+        <xmp>
+          'providers' => [
+            ..
+            Mews\Captcha\CaptchaServiceProvider::class,
+          ]
+          'aliases' => Facade::defaultAliases()->merge([
+            // ...
+            'Captcha' => Mews\Captcha\Facades\Captcha::class,
+          ])->toArray(),
+        </xmp>
+      </pre>
+    </div>
+  </body>
+</html>

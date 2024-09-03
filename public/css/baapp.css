@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500;700;900&family=Noto+Serif+TC:wght@300;500;700;900&display=swap');
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body {
+    font-family: 'Noto Sans TC',sans-serif;
+    margin: 0;
+    padding: 0;
+    color:#444;
+    font-size: 16px;
+    position: relative;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 86%;
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+}
+
+ul {
+    list-style: none;
+}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none
+}
+
+.list-inline {
+    padding-left: 0;
+    list-style: none
+}
+
+.list-inline>li {
+    display: inline-block;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+img {
+    border: 0;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+/* h2 {
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 16px;
+}
+
+small {
+    font-size: 12px;
+}*/
+
+textarea:focus,
+input:focus{
+    outline: none;
+}
+
+
+
+/*puplicError 錯誤訊息--------------------------------------------------------------------*/
+.puplicError{
+    font-size: 12px;
+    font-family: 'Noto Sans TC',sans-serif;
+    font-weight: 100;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: red;
+    color: #fff;
+    position: absolute;
+    left: 4px;
+    bottom: -16px;
+}
+
+/*puplicRequired 必填--------------------------------------------------------------------*/
+.puplicRequired{
+  color: red;
+}
+
+/*publicMain----------------------------------------------------------------------*/
+.publicMain{
+  min-height: 100vh;
+  /* padding: 94px 24px 20px 250px; */
+  /* background: linear-gradient(180deg, #FFF1CC 3.12%, rgba(255, 233, 176, 0.262661) 47.4%, rgba(253, 242, 203, 0) 100%); */
+  padding: 50px 24px 20px calc(250px);
+  background: #232536;
+}
+.publicMainBox{
+  width: 100%;
+  box-shadow: 0 1px 4px 0 rgb(0 0 0 / 14%);
+  border-radius: 6px;
+  background: #fff;
+  padding: 10px;
+  /* min-height: calc(100vh - 50px - 24px); */
+  min-height: calc(100vh - 50px - 50px);
+}
+
+
+
+
+/*publicAppendix 附件*/
+/* .publicAppendix{
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+.publicAppendix>label{
+  width: 120px;
+  display: flex;
+  font-size: 16px;
+  padding-top: 10px;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+.publicAppendix>label svg{
+  fill: #777;
+  width: 14px;
+  height: 14px;
+  margin-left: 2px;
+  margin-top: 2px;
+}
+.publicAppendix .publicImg .img{
+  overflow: hidden;
+}
+.publicAppendix .publicImg .img .pdf{
+  background: #fff;
+  width: 70px;
+}
+.publicAppendix .publicImg .img .pdf svg{
+  opacity: .4;
+}
+.publicMain .content2 .publicAppendix .input{
+  gap: 15px;
+  flex: 1 1;
+} */

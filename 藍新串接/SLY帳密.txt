@@ -1,0 +1,31 @@
+﻿藍新企業會員
+統編:86736819
+帳號:sly_ha
+密碼:sly86736819
+
+
+正區網址:
+https://www.newebpay.com/main/login_center/single_login
+試區網址：
+https://cwww.newebpay.com/website/Page/content/register
+
+
+
+
+信用卡一次付清
+WebATM
+ATM轉帳
+超商代碼繳費 
+條碼繳費
+
+
+商店代號 MS3711741524
+HashKey iTmY6DAWaYDpYsTcPmLYKVocbGhQJQF3
+HashIV CW1CY2aEZnxOUFQP
+
+
+NEWEBPAY_ENV=dev(試式)/prod(正式)
+NEWEBPAY_MERCHANT_ID=MS350339093
+NEWEBPAY_HASH_KEY=iTmY6DAWaYDpYsTcPmLYKVocbGhQJQF3
+NEWEBPAY_HASH_IV=CW1CY2aEZnxOUFQP
+NEWEBPAY_CUSTOMER_BLADE=newebpay(blade 模版名)
